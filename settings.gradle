@@ -1,0 +1,3 @@
+include ':xwalk_core_library'
+include ':Application'
+include ':CordovaLib'
