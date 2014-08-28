@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("resume", this.onResume, false);
+        document.addEventListener("pause", this.onPause, false);
     },
     // deviceready Event Handler
     //
@@ -35,6 +37,12 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+    onResume: function() {
+            console.log("onResume");
+        },
+    onPause: function() {
+            console.log("onPause");
+        },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
