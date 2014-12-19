@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ var date1;
+ var date2;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -39,8 +42,17 @@ var app = {
     },
     onResume: function() {
             console.log("onResume");
+            date2 = new Date(); // 5:00 PM
+            if (date2 < date1) {
+                date2.setDate(date2.getDate() + 1);
+            }
+            var diff = date2 - date1;
+            console.log("diff: " + diff);
+
         },
     onPause: function() {
+
+            date1 = new Date(); // 9:00 AM
             console.log("onPause");
         },
     // Update DOM on a Received Event
